@@ -23,14 +23,18 @@ namespace GUI_Step_motor_ESP32
             // Asegurar que los eventos de los botones estén enlazados
             btnON.Click += btnON_Click;
             btnOFF.Click += btnOFF_Click;
-            btnRUN.Click += btnRUN_Click; // Agregar evento Click para btnRUN
-            btnSTOP.Click += btnSTOP_Click; // Agregar evento Click para btnSTOP
+            btnRUN.Click += btnRUN_Click;
+            btnSTOP.Click += btnSTOP_Click;
+            btnCLOCKWISE.Click += btnCLOCKWISE_Click; // Agregar evento Click para btnCLOCKWISE
+            btnCOUNTERCLOCKWISE.Click += btnCOUNTERCLOCKWISE_Click; // Agregar evento Click para btnCOUNTERCLOCKWISE
+            trackBarRPM.Scroll += trackBarRPM_Scroll; // Agregar evento Scroll para trackBarRPM
         }
 
         private void ConfiguracionInicial()
         {
             // Inicializar SerialPort
             serialPort = new SerialPort();
+            serialPort.DataReceived += SerialPort_DataReceived; // Agregar evento para recibir datos
 
             // Configurar ComboBox de puertos COM
             CargarPuertosDisponibles();
@@ -44,6 +48,26 @@ namespace GUI_Step_motor_ESP32
             // Configurar estado inicial de las imágenes
             imagenon.Visible = false;
             imagenoff.Visible = false;
+            imagenhorario.Visible = false; // Ocultar imagenhorario inicialmente
+            imagenantihorario.Visible = false; // Ocultar imagenantihorario inicialmente
+        }
+
+        // Evento para recibir datos del puerto serie
+        private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            string data = serialPort.ReadLine().Trim(); // Lee hasta el salto de línea
+
+            if (data.StartsWith("VELAY:"))
+            {
+                string delayValue = data.Substring(6).Trim(); // Extrae el valor después de "VELAY:"
+                int delayTime = int.Parse(delayValue);
+
+                // Actualizar la CircularProgressBar en el hilo principal
+                this.Invoke(new Action(() =>
+                {
+                    circularProgressBar1.Value = delayTime; // Actualiza la CircularProgressBar
+                }));
+            }
         }
 
         private void CargarPuertosDisponibles()
@@ -134,9 +158,11 @@ namespace GUI_Step_motor_ESP32
                     comshow.Enabled = true;
                     baudshow.Enabled = true;
 
-                    // Ocultar ambas imágenes al desconectar
+                    // Ocultar todas las imágenes al desconectar
                     imagenon.Visible = false;
                     imagenoff.Visible = false;
+                    imagenhorario.Visible = false;
+                    imagenantihorario.Visible = false;
 
                     MessageBox.Show("Dispositivo desconectado correctamente",
                                     "Éxito",
@@ -159,10 +185,7 @@ namespace GUI_Step_motor_ESP32
             {
                 if (serialPort.IsOpen)
                 {
-                    // Enviar comando ON
                     serialPort.WriteLine("ON");
-
-                    // Mostrar imagen de encendido y ocultar la de apagado
                     imagenon.Visible = true;
                     imagenoff.Visible = false;
                 }
@@ -189,10 +212,7 @@ namespace GUI_Step_motor_ESP32
             {
                 if (serialPort.IsOpen)
                 {
-                    // Enviar comando OFF
                     serialPort.WriteLine("OFF");
-
-                    // Mostrar imagen de apagado y ocultar la de encendido
                     imagenoff.Visible = true;
                     imagenon.Visible = false;
                 }
@@ -219,7 +239,6 @@ namespace GUI_Step_motor_ESP32
             {
                 if (serialPort.IsOpen)
                 {
-                    // Enviar comando RUN
                     serialPort.WriteLine("RUN");
                 }
                 else
@@ -245,7 +264,6 @@ namespace GUI_Step_motor_ESP32
             {
                 if (serialPort.IsOpen)
                 {
-                    // Enviar comando STOP
                     serialPort.WriteLine("STOP");
                 }
                 else
@@ -265,13 +283,84 @@ namespace GUI_Step_motor_ESP32
             }
         }
 
-        protected override void OnFormClosing(FormClosingEventArgs e)
+        private void btnCLOCKWISE_Click(object sender, EventArgs e)
         {
-            if (serialPort != null && serialPort.IsOpen)
+            try
             {
-                serialPort.Close();
+                if (serialPort.IsOpen)
+                {
+                    serialPort.WriteLine("CLOCKWISE");
+                    imagenhorario.Visible = true;
+                    imagenantihorario.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("El puerto serial no está abierto",
+                                    "Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                }
             }
-            base.OnFormClosing(e);
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al enviar comando CLOCKWISE: {ex.Message}",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnCOUNTERCLOCKWISE_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (serialPort.IsOpen)
+                {
+                    serialPort.WriteLine("COUNTERCLOCKWISE");
+                    imagenantihorario.Visible = true;
+                    imagenhorario.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("El puerto serial no está abierto",
+                                    "Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al enviar comando COUNTERCLOCKWISE: {ex.Message}",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
+
+        private void trackBarRPM_Scroll(object sender, EventArgs e)
+        {
+            try
+            {
+                if (serialPort.IsOpen)
+                {
+                    int valor = trackBarRPM.Value;
+                    serialPort.WriteLine($"DELAY {valor}");
+                }
+                else
+                {
+                    MessageBox.Show("El puerto serial no está abierto",
+                                    "Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al enviar comando DELAY: {ex.Message}",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
         }
     }
 }

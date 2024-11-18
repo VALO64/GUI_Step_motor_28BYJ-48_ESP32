@@ -39,6 +39,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnSTOP = new System.Windows.Forms.Button();
+            this.btnRUN = new System.Windows.Forms.Button();
             this.imagenoff = new System.Windows.Forms.PictureBox();
             this.imagenon = new System.Windows.Forms.PictureBox();
             this.btnOFF = new System.Windows.Forms.Button();
@@ -47,8 +49,10 @@
             this.imagenhorario = new System.Windows.Forms.PictureBox();
             this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnRUN = new System.Windows.Forms.Button();
-            this.btnSTOP = new System.Windows.Forms.Button();
+            this.btnCLOCKWISE = new System.Windows.Forms.Button();
+            this.btnCOUNTERCLOCKWISE = new System.Windows.Forms.Button();
+            this.trackBarRPM = new System.Windows.Forms.TrackBar();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagenoff)).BeginInit();
@@ -56,6 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.imagenantihorario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagenhorario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarRPM)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -161,6 +166,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.trackBarRPM);
+            this.groupBox2.Controls.Add(this.btnCOUNTERCLOCKWISE);
+            this.groupBox2.Controls.Add(this.btnCLOCKWISE);
             this.groupBox2.Controls.Add(this.btnSTOP);
             this.groupBox2.Controls.Add(this.btnRUN);
             this.groupBox2.Controls.Add(this.imagenoff);
@@ -170,11 +179,38 @@
             this.groupBox2.Controls.Add(this.imagenantihorario);
             this.groupBox2.Controls.Add(this.imagenhorario);
             this.groupBox2.Controls.Add(this.circularProgressBar1);
-            this.groupBox2.Location = new System.Drawing.Point(246, 91);
+            this.groupBox2.Location = new System.Drawing.Point(234, 82);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(514, 322);
+            this.groupBox2.Size = new System.Drawing.Size(542, 347);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
+            // 
+            // btnSTOP
+            // 
+            this.btnSTOP.BackColor = System.Drawing.Color.Crimson;
+            this.btnSTOP.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSTOP.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnSTOP.Location = new System.Drawing.Point(118, 270);
+            this.btnSTOP.Name = "btnSTOP";
+            this.btnSTOP.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnSTOP.Size = new System.Drawing.Size(75, 23);
+            this.btnSTOP.TabIndex = 8;
+            this.btnSTOP.Text = "STOP";
+            this.btnSTOP.UseVisualStyleBackColor = false;
+            this.btnSTOP.Click += new System.EventHandler(this.btnSTOP_Click);
+            // 
+            // btnRUN
+            // 
+            this.btnRUN.BackColor = System.Drawing.Color.Teal;
+            this.btnRUN.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRUN.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnRUN.Location = new System.Drawing.Point(119, 239);
+            this.btnRUN.Name = "btnRUN";
+            this.btnRUN.Size = new System.Drawing.Size(75, 23);
+            this.btnRUN.TabIndex = 7;
+            this.btnRUN.Text = "RUN";
+            this.btnRUN.UseVisualStyleBackColor = false;
+            this.btnRUN.Click += new System.EventHandler(this.btnRUN_Click);
             // 
             // imagenoff
             // 
@@ -289,32 +325,52 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // btnRUN
+            // btnCLOCKWISE
             // 
-            this.btnRUN.BackColor = System.Drawing.Color.Teal;
-            this.btnRUN.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRUN.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnRUN.Location = new System.Drawing.Point(119, 239);
-            this.btnRUN.Name = "btnRUN";
-            this.btnRUN.Size = new System.Drawing.Size(75, 23);
-            this.btnRUN.TabIndex = 7;
-            this.btnRUN.Text = "RUN";
-            this.btnRUN.UseVisualStyleBackColor = false;
-            this.btnRUN.Click += new System.EventHandler(this.btnRUN_Click);
+            this.btnCLOCKWISE.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnCLOCKWISE.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCLOCKWISE.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnCLOCKWISE.Location = new System.Drawing.Point(218, 238);
+            this.btnCLOCKWISE.Name = "btnCLOCKWISE";
+            this.btnCLOCKWISE.Size = new System.Drawing.Size(88, 23);
+            this.btnCLOCKWISE.TabIndex = 9;
+            this.btnCLOCKWISE.Text = "CLOCKWISE";
+            this.btnCLOCKWISE.UseVisualStyleBackColor = false;
+            this.btnCLOCKWISE.Click += new System.EventHandler(this.btnCLOCKWISE_Click);
             // 
-            // btnSTOP
+            // btnCOUNTERCLOCKWISE
             // 
-            this.btnSTOP.BackColor = System.Drawing.Color.Crimson;
-            this.btnSTOP.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSTOP.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnSTOP.Location = new System.Drawing.Point(118, 270);
-            this.btnSTOP.Name = "btnSTOP";
-            this.btnSTOP.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSTOP.Size = new System.Drawing.Size(75, 23);
-            this.btnSTOP.TabIndex = 8;
-            this.btnSTOP.Text = "STOP";
-            this.btnSTOP.UseVisualStyleBackColor = false;
-            this.btnSTOP.Click += new System.EventHandler(this.btnSTOP_Click);
+            this.btnCOUNTERCLOCKWISE.BackColor = System.Drawing.Color.SaddleBrown;
+            this.btnCOUNTERCLOCKWISE.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCOUNTERCLOCKWISE.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnCOUNTERCLOCKWISE.Location = new System.Drawing.Point(312, 238);
+            this.btnCOUNTERCLOCKWISE.Name = "btnCOUNTERCLOCKWISE";
+            this.btnCOUNTERCLOCKWISE.Size = new System.Drawing.Size(142, 23);
+            this.btnCOUNTERCLOCKWISE.TabIndex = 10;
+            this.btnCOUNTERCLOCKWISE.Text = "COUNTERCLOCKWISE";
+            this.btnCOUNTERCLOCKWISE.UseVisualStyleBackColor = false;
+            this.btnCOUNTERCLOCKWISE.Click += new System.EventHandler(this.btnCOUNTERCLOCKWISE_Click);
+            // 
+            // trackBarRPM
+            // 
+            this.trackBarRPM.Location = new System.Drawing.Point(218, 296);
+            this.trackBarRPM.Minimum = 3;
+            this.trackBarRPM.Name = "trackBarRPM";
+            this.trackBarRPM.Size = new System.Drawing.Size(236, 45);
+            this.trackBarRPM.TabIndex = 11;
+            this.trackBarRPM.Value = 10;
+            this.trackBarRPM.Scroll += new System.EventHandler(this.trackBarRPM_Scroll);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.label5.Location = new System.Drawing.Point(287, 270);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 19);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "RPM Control";
             // 
             // Form1
             // 
@@ -334,11 +390,13 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagenoff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagenon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagenantihorario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagenhorario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarRPM)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,6 +424,10 @@
         private System.Windows.Forms.PictureBox imagenoff;
         private System.Windows.Forms.Button btnRUN;
         private System.Windows.Forms.Button btnSTOP;
+        private System.Windows.Forms.Button btnCOUNTERCLOCKWISE;
+        private System.Windows.Forms.Button btnCLOCKWISE;
+        private System.Windows.Forms.TrackBar trackBarRPM;
+        private System.Windows.Forms.Label label5;
     }
 }
 
