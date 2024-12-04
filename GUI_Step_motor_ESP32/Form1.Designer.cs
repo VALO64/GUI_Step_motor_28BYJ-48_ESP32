@@ -39,6 +39,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnmenos360 = new System.Windows.Forms.Button();
+            this.btnmenos180 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn360 = new System.Windows.Forms.Button();
+            this.btn180 = new System.Windows.Forms.Button();
+            this.btn90 = new System.Windows.Forms.Button();
+            this.btn45 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,14 +63,7 @@
             this.imagenhorario = new System.Windows.Forms.PictureBox();
             this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn45 = new System.Windows.Forms.Button();
-            this.btn90 = new System.Windows.Forms.Button();
-            this.btn180 = new System.Windows.Forms.Button();
-            this.btn360 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnmenos180 = new System.Windows.Forms.Button();
-            this.btnmenos360 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRPM)).BeginInit();
@@ -168,7 +169,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.label4.Location = new System.Drawing.Point(119, 41);
+            this.label4.Location = new System.Drawing.Point(119, 39);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(225, 19);
             this.label4.TabIndex = 2;
@@ -204,6 +205,110 @@
             this.groupBox2.Size = new System.Drawing.Size(687, 347);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
+            // 
+            // btnmenos360
+            // 
+            this.btnmenos360.BackColor = System.Drawing.Color.SaddleBrown;
+            this.btnmenos360.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmenos360.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnmenos360.Location = new System.Drawing.Point(537, 299);
+            this.btnmenos360.Name = "btnmenos360";
+            this.btnmenos360.Size = new System.Drawing.Size(88, 23);
+            this.btnmenos360.TabIndex = 23;
+            this.btnmenos360.Text = "-360°";
+            this.btnmenos360.UseVisualStyleBackColor = false;
+            this.btnmenos360.Click += new System.EventHandler(this.btnmenos360_Click);
+            // 
+            // btnmenos180
+            // 
+            this.btnmenos180.BackColor = System.Drawing.Color.SaddleBrown;
+            this.btnmenos180.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmenos180.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnmenos180.Location = new System.Drawing.Point(537, 270);
+            this.btnmenos180.Name = "btnmenos180";
+            this.btnmenos180.Size = new System.Drawing.Size(88, 23);
+            this.btnmenos180.TabIndex = 22;
+            this.btnmenos180.Text = "-180°";
+            this.btnmenos180.UseVisualStyleBackColor = false;
+            this.btnmenos180.Click += new System.EventHandler(this.btnmenos180_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.SaddleBrown;
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.button2.Location = new System.Drawing.Point(537, 242);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(88, 23);
+            this.button2.TabIndex = 21;
+            this.button2.Text = "-90°";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.SaddleBrown;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.button1.Location = new System.Drawing.Point(537, 214);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(88, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "-45°";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btn360
+            // 
+            this.btn360.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btn360.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn360.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btn360.Location = new System.Drawing.Point(537, 157);
+            this.btn360.Name = "btn360";
+            this.btn360.Size = new System.Drawing.Size(88, 23);
+            this.btn360.TabIndex = 19;
+            this.btn360.Text = "360°";
+            this.btn360.UseVisualStyleBackColor = false;
+            this.btn360.Click += new System.EventHandler(this.btn360_Click);
+            // 
+            // btn180
+            // 
+            this.btn180.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btn180.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn180.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btn180.Location = new System.Drawing.Point(537, 128);
+            this.btn180.Name = "btn180";
+            this.btn180.Size = new System.Drawing.Size(88, 23);
+            this.btn180.TabIndex = 19;
+            this.btn180.Text = "180°";
+            this.btn180.UseVisualStyleBackColor = false;
+            this.btn180.Click += new System.EventHandler(this.btn180_Click);
+            // 
+            // btn90
+            // 
+            this.btn90.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btn90.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn90.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btn90.Location = new System.Drawing.Point(537, 99);
+            this.btn90.Name = "btn90";
+            this.btn90.Size = new System.Drawing.Size(88, 23);
+            this.btn90.TabIndex = 18;
+            this.btn90.Text = "90°";
+            this.btn90.UseVisualStyleBackColor = false;
+            this.btn90.Click += new System.EventHandler(this.btn90_Click);
+            // 
+            // btn45
+            // 
+            this.btn45.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btn45.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn45.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btn45.Location = new System.Drawing.Point(537, 70);
+            this.btn45.Name = "btn45";
+            this.btn45.Size = new System.Drawing.Size(88, 23);
+            this.btn45.TabIndex = 17;
+            this.btn45.Text = "45°";
+            this.btn45.UseVisualStyleBackColor = false;
+            this.btn45.Click += new System.EventHandler(this.btn45_Click);
             // 
             // label7
             // 
@@ -416,109 +521,16 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // btn45
+            // label8
             // 
-            this.btn45.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.btn45.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn45.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btn45.Location = new System.Drawing.Point(537, 70);
-            this.btn45.Name = "btn45";
-            this.btn45.Size = new System.Drawing.Size(88, 23);
-            this.btn45.TabIndex = 17;
-            this.btn45.Text = "45°";
-            this.btn45.UseVisualStyleBackColor = false;
-            this.btn45.Click += new System.EventHandler(this.btn45_Click);
-            // 
-            // btn90
-            // 
-            this.btn90.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.btn90.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn90.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btn90.Location = new System.Drawing.Point(537, 99);
-            this.btn90.Name = "btn90";
-            this.btn90.Size = new System.Drawing.Size(88, 23);
-            this.btn90.TabIndex = 18;
-            this.btn90.Text = "90°";
-            this.btn90.UseVisualStyleBackColor = false;
-            this.btn90.Click += new System.EventHandler(this.btn90_Click);
-            // 
-            // btn180
-            // 
-            this.btn180.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.btn180.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn180.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btn180.Location = new System.Drawing.Point(537, 128);
-            this.btn180.Name = "btn180";
-            this.btn180.Size = new System.Drawing.Size(88, 23);
-            this.btn180.TabIndex = 19;
-            this.btn180.Text = "180°";
-            this.btn180.UseVisualStyleBackColor = false;
-            this.btn180.Click += new System.EventHandler(this.btn180_Click);
-            // 
-            // btn360
-            // 
-            this.btn360.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.btn360.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn360.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btn360.Location = new System.Drawing.Point(537, 157);
-            this.btn360.Name = "btn360";
-            this.btn360.Size = new System.Drawing.Size(88, 23);
-            this.btn360.TabIndex = 19;
-            this.btn360.Text = "360°";
-            this.btn360.UseVisualStyleBackColor = false;
-            this.btn360.Click += new System.EventHandler(this.btn360_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.SaddleBrown;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.button1.Location = new System.Drawing.Point(537, 214);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "-45°";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.SaddleBrown;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.button2.Location = new System.Drawing.Point(537, 242);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 23);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "-90°";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnmenos180
-            // 
-            this.btnmenos180.BackColor = System.Drawing.Color.SaddleBrown;
-            this.btnmenos180.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmenos180.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnmenos180.Location = new System.Drawing.Point(537, 270);
-            this.btnmenos180.Name = "btnmenos180";
-            this.btnmenos180.Size = new System.Drawing.Size(88, 23);
-            this.btnmenos180.TabIndex = 22;
-            this.btnmenos180.Text = "-180°";
-            this.btnmenos180.UseVisualStyleBackColor = false;
-            this.btnmenos180.Click += new System.EventHandler(this.btnmenos180_Click);
-            // 
-            // btnmenos360
-            // 
-            this.btnmenos360.BackColor = System.Drawing.Color.SaddleBrown;
-            this.btnmenos360.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmenos360.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnmenos360.Location = new System.Drawing.Point(537, 299);
-            this.btnmenos360.Name = "btnmenos360";
-            this.btnmenos360.Size = new System.Drawing.Size(88, 23);
-            this.btnmenos360.TabIndex = 23;
-            this.btnmenos360.Text = "-360°";
-            this.btnmenos360.UseVisualStyleBackColor = false;
-            this.btnmenos360.Click += new System.EventHandler(this.btnmenos360_Click);
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.label8.Location = new System.Drawing.Point(119, 64);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(218, 19);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Raul Alejandro Rodriguez Morales";
             // 
             // Form1
             // 
@@ -526,6 +538,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(41)))), ((int)(((byte)(39)))));
             this.ClientSize = new System.Drawing.Size(950, 477);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label4);
@@ -586,6 +599,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnmenos360;
+        private System.Windows.Forms.Label label8;
     }
 }
 
